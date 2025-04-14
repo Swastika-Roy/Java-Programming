@@ -1,0 +1,37 @@
+package Java.Thread;
+
+//class Mytask{
+//    void executeTask(){
+//
+//        for (int doc = 1; doc <= 10; doc++){
+//            System.out.println(" @@ Printing Document #"+doc+ " - Printer2");
+//        }
+//
+//    }
+//}
+
+class Mytask extends Thread{
+    public void run(){
+
+        for (int doc = 1; doc <= 10; doc++){
+            System.out.println(" @@ Printing Document #"+doc+ " - Printer2");
+        }
+
+    }
+}
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("==Application Started==");
+
+        Mytask task = new Mytask();
+
+        task.start();
+
+        for (int doc = 1; doc <= 10; doc++){
+            System.out.println("^^ Printing Document #"+doc+ " - Printer1");
+        }
+
+        System.out.println("==Application finsihed==");
+    }
+}
